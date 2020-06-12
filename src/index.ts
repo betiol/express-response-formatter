@@ -46,21 +46,25 @@ const _generateFormatters = (res: Response) => {
 interface SuccessInput {
   data: any
   meta: any
+  status?: string
 }
 
 const _generateSuccessResponse = ({ data, meta }: SuccessInput) => ({
   data,
   meta,
+  status: 'success',
 })
 
 interface ErrorsInput {
   error: any
   meta: any
+  status?: string
 }
 
 const _generateErrorResponse = ({ error, meta }: ErrorsInput) => ({
   error,
   meta,
+  status: 'error',
 })
 
 export { responseEnhancer }
